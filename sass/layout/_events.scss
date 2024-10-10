@@ -1,0 +1,129 @@
+.events {
+  @include setting-section-layout;
+
+  background-color: $color-grey-light-2;
+  position: relative;
+
+  &__background {
+    &--right {
+      position: absolute;
+      top: 25%;
+      right: 0;
+    }
+
+    &--left {
+      position: absolute;
+      bottom: 25%;
+      left: 0;
+    }
+
+    @include respond(laptop) {
+      display: none;
+    }
+  }
+
+  &__content {
+    grid-column: center-start / center-end;
+
+    display: grid;
+    grid-template-columns: repeat(10, minmax(min-content, 12.5rem));
+    grid-template-rows: repeat(2, min-content);
+    row-gap: 5rem;
+    padding: 0 5rem;
+
+    @include respond(laptop) {
+      grid-column: full-start / full-end;
+    }
+
+    @include respond(phone) {
+      padding: 0 3rem;
+    }
+  }
+
+  &__img {
+    width: 100%;
+
+    grid-column: 1 / 5;
+    grid-row: 1 / 3;
+    align-self: center;
+
+    @include respond(tab-land) {
+      display: none;
+    }
+  }
+
+  &__timer {
+    grid-column: 6 / 10;
+    grid-row: 1 / 2;
+    align-self: end;
+    justify-self: center;
+
+    list-style: none;
+    display: flex;
+
+    text-align: center;
+
+    @include respond(tab-land) {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__timer-card {
+    border: 1px solid $color-grey-dark-1;
+    border-radius: 0.5rem;
+    width: 8rem;
+
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+
+      @include respond(phone) {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  &__value {
+    padding: 3rem 1rem;
+    border-bottom: 1px solid $color-grey-dark-1;
+
+    @include respond(phone) {
+      padding: 1.5rem 0.5rem;
+    }
+  }
+
+  &__type {
+    padding: 1rem;
+    color: $color-grey-dark-2;
+    font-size: 1.6rem;
+  }
+
+  &__letter {
+    grid-column: 5 / -1;
+    grid-row: 2 / 3;
+    align-self: start;
+    justify-self: center;
+
+    text-align: center;
+
+    @include respond(tab-land) {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__letter-heading {
+    margin-bottom: 2.5rem;
+  }
+
+  &__text {
+    font-size: 2rem;
+    line-height: 1.5;
+  }
+
+  &__form {
+    grid-column: center-start / center-end;
+
+    @include respond(laptop) {
+      grid-column: full-start / full-end;
+    }
+  }
+}

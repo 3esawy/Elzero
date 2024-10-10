@@ -1,0 +1,30 @@
+.pricing {
+  @include setting-section-layout;
+  position: relative;
+
+  &__background {
+    &--right {
+      position: absolute;
+      top: 25%;
+      right: 0;
+    }
+
+    &--left {
+      position: absolute;
+      bottom: 25%;
+      left: 0;
+    }
+
+    @include respond(laptop) {
+      display: none;
+    }
+  }
+
+  &__plans {
+    @include setting-list-layout;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    gap: 4rem;
+  }
+}

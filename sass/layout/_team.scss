@@ -1,0 +1,11 @@
+.team {
+  @include setting-section-layout;
+
+  &__list {
+    @include setting-list-layout;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 4rem;
+  }
+}

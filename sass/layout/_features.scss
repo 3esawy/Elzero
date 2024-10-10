@@ -1,0 +1,13 @@
+.features {
+  @include setting-section-layout;
+
+  &__list {
+    @include setting-list-layout;
+    grid-column: full-start / full-end;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 40rem));
+    gap: 5rem;
+    justify-content: center;
+  }
+}

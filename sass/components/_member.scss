@@ -1,0 +1,92 @@
+.member {
+  background-color: white;
+  padding: 6rem 0 2rem 2rem;
+  position: relative;
+  border-radius: 1rem;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 85%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    border-radius: 1rem;
+
+    background-image: linear-gradient(
+      to right,
+      $color-grey-light-1 50%,
+      $color-grey-light-2 50%
+    );
+    background-size: 200% 100%;
+    background-position: left top;
+    transition: all 0.3s;
+  }
+
+  &:hover::after {
+    background-position: right bottom;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    z-index: 1;
+    position: relative;
+  }
+
+  &__img {
+    border-radius: 1rem;
+    max-width: 80%;
+    display: block;
+    filter: grayscale(100%);
+    transition: all 0.3s;
+  }
+
+  &:hover &__img {
+    filter: grayscale(0);
+  }
+
+  &__social {
+    list-style: none;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__social-item {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: $color-grey-dark-1;
+    transition: all 0.3s;
+
+    &:hover {
+      fill: $color-primary-dark;
+    }
+  }
+
+  &__description {
+    width: 85%;
+    margin-left: auto;
+    z-index: 1;
+    position: relative;
+    font-size: 1.6rem;
+  }
+
+  &__heading {
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    color: $color-primary-dark;
+    font-weight: 600;
+  }
+}

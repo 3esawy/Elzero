@@ -1,0 +1,75 @@
+@keyframes landing-img-animation {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6rem);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes arrow-down-btn-animation {
+  0%,
+  10%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40%,
+  60% {
+    transform: translateY(-2rem);
+  }
+}
+
+@keyframes title-before-animation {
+  50% {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    left: 0rem;
+  }
+
+  100% {
+    width: 51%;
+    height: 100%;
+    border-radius: 0;
+    left: 0rem;
+  }
+}
+
+@keyframes title-after-animation {
+  50% {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    right: 0rem;
+  }
+
+  100% {
+    width: 51%;
+    height: 100%;
+    border-radius: 0;
+    right: 0rem;
+  }
+}
+
+@keyframes article-arrow-animation {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX(1rem);
+  }
+}

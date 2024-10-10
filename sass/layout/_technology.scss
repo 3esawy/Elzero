@@ -1,0 +1,88 @@
+.technology {
+  @include setting-section-layout;
+
+  &__img {
+    padding-left: 5rem;
+    grid-column: center-start / col-end 5;
+    align-self: center;
+    width: 100%;
+    display: block;
+
+    @include respond(laptop) {
+      grid-column: full-start / col-end 5;
+    }
+
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+
+  &__content {
+    padding-right: 5rem;
+    list-style: none;
+    grid-column: col-start 7 / center-end;
+    align-self: center;
+    justify-self: start;
+    width: 100%;
+
+    @include respond(laptop) {
+      grid-column: col-start 7 / full-end;
+    }
+
+    @include respond(tab-port) {
+      grid-column: full-start / full-end;
+      padding: 0 3rem;
+    }
+  }
+
+  &__item {
+    margin-bottom: 2.5rem;
+    position: relative;
+
+    &--80 {
+      --percentage: 80%;
+      --percentage-text: "80%";
+    }
+    &--85 {
+      --percentage: 85%;
+      --percentage-text: "85%";
+    }
+    &--70 {
+      --percentage: 70%;
+      --percentage-text: "70%";
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      content: var(--percentage-text);
+      padding: 0.3rem;
+      color: $color-primary;
+      background-color: white;
+      border: 1px solid $color-grey-light-2;
+      border-radius: 5px;
+      font-size: 1.3rem;
+    }
+  }
+
+  &__name {
+    margin-bottom: 1rem;
+  }
+
+  &__bar {
+    background-color: $color-grey-light-2;
+    width: 100%;
+    height: 4rem;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: "";
+      background-color: $color-primary;
+      height: 100%;
+      left: 0;
+      width: var(--percentage);
+    }
+  }
+}

@@ -1,0 +1,115 @@
+.header {
+  grid-row: 1 / 2;
+  grid-column: 1 / -1;
+
+  display: grid;
+  grid-template-columns: subgrid;
+  align-items: center;
+
+  box-shadow: $shadow-light;
+  z-index: 1;
+  padding: 0 2rem;
+
+  @include respond(tab-port) {
+    grid-template-columns: min-content 1fr;
+    align-items: center;
+  }
+
+  @include respond(phone) {
+    justify-items: center;
+    padding: 1rem 1rem 0;
+  }
+
+  &__logo {
+    grid-column: 2 / 3;
+
+    text-decoration: none;
+    color: $color-primary;
+    font-size: 4rem;
+    font-weight: 700;
+
+    @include respond(laptop) {
+      grid-column: 1 / 2;
+    }
+
+    @include respond(phone) {
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
+
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__nav {
+    grid-column: col-start 7 / center-end;
+
+    list-style: none;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+
+    @include respond(laptop) {
+      grid-column: col-start 7 / full-end;
+    }
+
+    @include respond(phone) {
+      grid-column: 1 / -1;
+      grid-row: 2 / 3;
+    }
+  }
+
+  &__item {
+    height: 100%;
+    transition: all 0.3s;
+    position: relative;
+    padding: 1rem 2rem;
+
+    display: flex;
+    align-items: center;
+
+    @include respond(tab-port) {
+      padding: 1rem;
+    }
+
+    @include respond(phone) {
+      padding: 1rem;
+      padding-bottom: 2rem;
+    }
+
+    &:last-child {
+      width: max-content;
+    }
+
+    &:hover {
+      background-color: $color-grey-light-1;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 5px;
+      width: 0%;
+      background-color: $color-primary;
+      transition: all 0.5s;
+    }
+
+    &:hover::before {
+      width: 100%;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: black;
+    font-size: 2rem;
+    transition: all 0.5s;
+  }
+
+  &__item:hover &__link {
+    color: $color-primary;
+  }
+}

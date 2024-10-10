@@ -1,0 +1,10 @@
+.discount {
+  grid-column: full-start / full-end;
+
+  display: flex;
+  justify-content: center;
+
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
+}

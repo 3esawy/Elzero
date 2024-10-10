@@ -1,0 +1,137 @@
+.plan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $color-grey-light-1;
+  padding: 2rem 0;
+  box-shadow: $shadow-light;
+  border-radius: 0.2rem;
+  position: relative;
+
+  & > * {
+    z-index: 1;
+  }
+
+  &--most-popular {
+    transform: translateY(-2rem);
+
+    @include respond(laptop) {
+      transform: translateY(0);
+    }
+  }
+
+  &__padge {
+    position: absolute;
+    writing-mode: vertical-rl;
+    top: 0;
+    right: 3rem;
+    padding: 2rem 1rem 3rem;
+    background-color: $color-primary;
+    color: white;
+    font-weight: 700;
+    font-size: 1.8rem;
+    z-index: -1;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      border: 1.9rem solid;
+      border-color: transparent transparent $color-grey-light-1 transparent;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 2rem;
+  }
+
+  &__img {
+    width: 10rem;
+    margin-bottom: 3rem;
+  }
+
+  &__price {
+    font-size: 7rem;
+    margin-bottom: 1rem;
+  }
+
+  &__permonth {
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+  }
+
+  &__specs {
+    list-style: none;
+    align-self: flex-start;
+
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+  &__specs-item {
+    display: flex;
+    align-items: center;
+
+    padding: 2rem;
+    border-top: 1px solid $color-grey-light-2;
+    font-size: 1.6rem;
+
+    &:last-child {
+      border-bottom: 1px solid $color-grey-light-2;
+    }
+  }
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+    fill: $color-primary;
+    margin-right: 1rem;
+  }
+
+  &__btn {
+    border: 3px solid black;
+    border-radius: 0.5rem;
+    color: black;
+    text-transform: uppercase;
+    outline: none;
+    padding: 1.25rem 3.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: auto;
+    transition: all 0.3s;
+    cursor: pointer;
+    font-family: inherit;
+
+    &:hover {
+      border-color: transparent;
+      background-color: black;
+      color: $color-grey-light-1;
+    }
+  }
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: rgba(white, 0.3);
+    height: 50%;
+    width: 0%;
+    transition: all 0.3s;
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+  }
+
+  &::after {
+    bottom: 0;
+    right: 0;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    width: 100%;
+  }
+}

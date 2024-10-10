@@ -1,0 +1,58 @@
+.form {
+  margin-top: 8rem;
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 5rem;
+  width: 40%;
+
+  display: flex;
+
+  @include respond(tab-land) {
+    width: 60%;
+  }
+
+  @include respond(tab-land) {
+    width: 80%;
+  }
+
+  @include respond(phone) {
+    width: 90%;
+  }
+
+  & > * {
+    border-radius: 5rem;
+    border: none;
+    outline: none;
+    padding: 1rem 2rem;
+  }
+
+  &__input {
+    flex: 1;
+    background-color: $color-grey-light-1;
+    font-family: inherit;
+    font-size: 1.4rem;
+    caret-color: $color-primary;
+    transition: all 0.3s;
+    color: $color-primary;
+
+    &::placeholder {
+      color: $color-primary;
+      font-weight: 700;
+      transition: all 0.3s;
+    }
+
+    &:focus::placeholder {
+      color: transparent;
+    }
+  }
+
+  &__btn {
+    margin-left: 2rem;
+    background-color: $color-primary;
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.6rem;
+    font-family: inherit;
+  }
+}

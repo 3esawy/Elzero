@@ -1,0 +1,50 @@
+.title {
+  grid-column: full-start / full-end;
+  align-self: start;
+  justify-self: center;
+
+  margin-bottom: 7rem;
+  padding: 1.5rem 2.5rem;
+  border: 2px solid black;
+  position: relative;
+  transition: all 0.3s;
+
+  @include respond(laptop) {
+    margin-bottom: 5rem;
+  }
+
+  &:hover {
+    color: white;
+    border-color: white;
+    transition-delay: 0.2s;
+  }
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    background-color: $color-primary;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  &::before {
+    left: -3rem;
+  }
+
+  &::after {
+    right: -3rem;
+  }
+
+  &:hover::before {
+    animation: title-before-animation 0.5s forwards;
+  }
+
+  &:hover::after {
+    animation: title-after-animation 0.5s forwards;
+  }
+}

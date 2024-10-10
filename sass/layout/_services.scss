@@ -1,0 +1,14 @@
+.services {
+  @include setting-section-layout;
+  background-color: $color-grey-light-2;
+
+  &__list {
+    @include setting-list-layout;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 4rem;
+
+    counter-reset: list-counter;
+  }
+}

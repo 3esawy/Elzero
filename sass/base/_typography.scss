@@ -1,0 +1,42 @@
+.heading-1 {
+  color: black;
+  font-size: 3.5rem;
+  text-transform: capitalize;
+}
+
+.heading-2 {
+  font-size: 3.25rem;
+  color: black;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.heading-3-main {
+  color: black;
+  font-size: 2rem;
+
+  &--blue {
+    color: $color-primary;
+  }
+}
+
+.heading-3-secondary {
+  color: black;
+  font-size: 3.5rem;
+
+  @include respond(phone) {
+    font-size: 3rem;
+  }
+
+  &--blue {
+    color: $color-primary;
+  }
+}
+
+.heading-4 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.heading-5 {
+}

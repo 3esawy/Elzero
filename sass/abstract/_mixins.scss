@@ -1,0 +1,63 @@
+@mixin setting-section-layout {
+  grid-column: full-start / full-end;
+
+  display: grid;
+  grid-template-columns: subgrid;
+  justify-items: center;
+
+  padding: $section-padding 0;
+}
+
+@mixin setting-list-layout {
+  width: 100%;
+  grid-column: center-start / center-end;
+  grid-row: 2 / 3;
+
+  list-style: none;
+  padding: 0 5rem;
+
+  @include respond(laptop) {
+    grid-column: full-start / full-end;
+  }
+
+  @include respond(tab-land) {
+    padding: 0 3rem;
+  }
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == laptop {
+    @media (max-width: 75em) {
+      //1200px
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-land {
+    @media (max-width: 56.25em) {
+      //900px
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-port {
+    @media (max-width: 48em) {
+      //768px
+      @content;
+    }
+  }
+
+  @if $breakpoint == phone {
+    @media (max-width: 35em) {
+      //560px
+      @content;
+    }
+  }
+
+  @if $breakpoint == phone-small {
+    @media (max-width: 26em) {
+      //416px
+      @content;
+    }
+  }
+}

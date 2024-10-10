@@ -1,0 +1,90 @@
+.stats {
+  @include setting-section-layout;
+
+  background-image: linear-gradient(rgba(white, 0.95), rgba(white, 0.95)),
+    url(../../imgs/stats.jpg);
+
+  background-size: cover;
+
+  &__heading {
+    grid-column: 1 / -1;
+    margin-bottom: 5rem;
+  }
+
+  &__list {
+    @include setting-list-layout;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 3rem;
+  }
+
+  &__item {
+    background-color: white;
+    box-shadow: $shadow-light;
+    border-radius: 3px;
+    padding: 2rem;
+    transition: all 0.5s;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      background-color: $color-primary;
+      height: 0;
+      width: 3px;
+      transition: all 0.5s;
+    }
+
+    &::after {
+      bottom: 0;
+      right: 0;
+    }
+
+    &::before {
+      top: 0;
+      left: 0;
+    }
+
+    &:hover::before,
+    &:hover::after {
+      height: 100%;
+    }
+  }
+
+  &__icon {
+    width: 5rem;
+    height: 5rem;
+    fill: $color-grey-dark-1;
+    margin-bottom: 1rem;
+    transition: all 0.5s;
+  }
+
+  &__item:hover &__icon {
+    fill: black;
+  }
+
+  &__number {
+    font-size: 6rem;
+    color: $color-grey-dark-1;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    transition: all 0.5s;
+  }
+
+  &__item:hover &__number {
+    color: black;
+  }
+
+  &__type {
+    color: $color-primary;
+    font-size: 2rem;
+    font-weight: 700;
+    font-style: italic;
+  }
+}
